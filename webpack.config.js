@@ -2,7 +2,7 @@ var path = require('path'); // from node
 
 module.exports = {
 
-    entry: path.resolve(__dirname, 'src') + '/app/index.js', //source
+    entry: path.resolve(__dirname, 'src') + '/app/app.js', //source
     output: {
         path: path.resolve(__dirname, 'dist') + '/app',
         filename: 'bundle.js',
