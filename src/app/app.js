@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+require('../css/main.css');
 
 //import routes from "./routes.js"
 import Homepage from "./components/homepage/home";
@@ -13,3 +14,4 @@ ReactDOM.render(
         </div>
     </Router>,
 app);
+
