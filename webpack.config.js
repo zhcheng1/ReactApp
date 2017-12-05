@@ -9,7 +9,7 @@ module.exports = {
         publicPath: '/app/' //refer the bundle file as in the app folder
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/, // look for js files
                 include: path.resolve(__dirname, 'src'), // where to look for
@@ -19,8 +19,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                test: /\.scss$/,
+                loader: 'style-loader!css-loader!sass-loader'
             }
         ]
     }
