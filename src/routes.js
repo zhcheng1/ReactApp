@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-import Frame from "./template/frame";
+import Frame from "./containers/frame";
 import TodoListComponent from "./components/todoList/todoListComponent";
 import ContactComponent from "./components/contact/contactComponent";
 

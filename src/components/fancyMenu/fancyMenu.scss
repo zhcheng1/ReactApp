@@ -1,0 +1,94 @@
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.fancyMenu {
+  background-image: url("../../img/star_night.jpg");
+  min-height: 700px;
+
+  .menuText {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    padding: 150px;
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+  }
+  .menuContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 300px;
+    &.active #dd1 {
+      transform: translate(-645px, -40px);
+    }
+    &.active #dd2 {
+      transform: translate(-450px, -80px);
+    }
+
+    &.active #dd3 {
+      transform: translate(-250px, 80px);
+    }
+
+    &.active #dd4 {
+      transform: translate(-150px, -40px);
+    }
+  }
+
+  .menuItem {
+    width: 50px;
+    height: 50px;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/927610/ufo-svgrepo-com.svg) no-repeat;
+    transition: all 1s ease-in;
+    position: absolute;
+    top: 200px;
+    right: 115px;
+    color: white;
+
+    div {
+      border-bottom: 120px solid rgba(pink, 0.6);
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      height: 0;
+      width: 10px;
+      position: absolute;
+      top: 49px;
+      left: -29px;
+    }
+
+    h4{
+      position: absolute;
+      top: 25px;
+      left: -20px;
+      width: 50px;
+      text-align: center;
+      word-wrap: normal;
+    }
+  }
+}
+
+

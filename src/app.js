@@ -1,11 +1,20 @@
-//import { BrowserRouter as Router, Route, Link} from "react-router-dom";
-//require('../css/main.css');
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import './sass/main.scss';
 
 //import routes from "./routes.js"
-//import Homepage from "./components/homepage/home";
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import Homepage from "./view/Homepage";
+
+//let store = createStore(todoApp);
+// <Provider store={store}>
 
 const app = document.getElementById('app');
 ReactDOM.render(
-    <div>helloe</div>,
+
+        <Router>
+            <Route path="/" component={Homepage}></Route>
+        </Router>,
 app);
 

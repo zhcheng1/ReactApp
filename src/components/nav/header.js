@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 export default class Header extends React.Component {
@@ -15,7 +12,7 @@ export default class Header extends React.Component {
 
         return (
             <div id="header">
-                <img src={require('../../../img/128H.jpg')} className="nav-header-logo"/>
+
             <ul>
                 {headerItem}
             </ul>

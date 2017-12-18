@@ -18,7 +18,7 @@ let dfConfig = {
 
     output: {
         path: path.resolve(__dirname, '../dist/app'),
-        filename: '[name].js',
+        filename: 'app.js',
         publicPath: '/assets/'
     },
 

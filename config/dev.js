@@ -12,8 +12,6 @@ let config = Object.assign(dfConfig, {
             template: './src/index.html'
         }),
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
             React: 'react',
             ReactDOM: 'react-dom',
             PT: 'prop-types'
@@ -30,12 +28,7 @@ let config = Object.assign(dfConfig, {
             //dfPath.view,
             dfPath.root
         ]
-    },
-    devServer: {
-        port: 9003,
-        open: true
-    },
-    devtool: 'cheap-module-eval-source-map'
+    }
 
 });
 
