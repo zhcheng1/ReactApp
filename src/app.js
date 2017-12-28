@@ -5,13 +5,12 @@ import './sass/main.scss';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Homepage from "./view/Homepage";
+import Homepage from "./pages/Homepage";
 
 //let store = createStore(todoApp);
 // <Provider store={store}>
 
 const app = document.getElementById('app');
-var ss= 1;
 ReactDOM.render(
 
         <Router>

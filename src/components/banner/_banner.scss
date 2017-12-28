@@ -1,0 +1,75 @@
+@import "../../sass/base/variables";
+
+$content-height: 300px;
+$hover-opacity-time: 0.35s;
+
+@include media-breakpoint(xs) {
+  .banner {
+    color: $app-white;
+    font-weight: 700;
+    text-align: center;
+
+    .hover-effect {
+      h1, h2 {
+        -webkit-transition: opacity $hover-opacity-time,
+        -webkit-transform $hover-opacity-time;
+        transition: opacity $hover-opacity-time, transform $hover-opacity-time;
+      }
+
+      h2{
+        opacity: 0;
+      }
+
+      &:hover h1 {
+        opacity: 0;
+      }
+
+      &:hover h2 {
+        opacity: 1;
+        -webkit-transform:  scale(1.5);
+        transform: scale(1.5);
+      }
+
+      .content::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        border: 3px solid $app-white;
+        content: '';
+        opacity: 0;
+        -webkit-transition: opacity $hover-opacity-time, -webkit-transform $hover-opacity-time;
+        transition: opacity $hover-opacity-time, transform $hover-opacity-time;
+        /* remove this bit if you want it to swing up */
+        -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+        transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+      }
+    }
+
+    .hover-effect:hover .content::before {
+      opacity: 1;
+      -webkit-transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(1,1,1);
+      transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(1,1,1);
+    }
+
+    .left-sec {
+      height: $content-height;
+      background-color: #fffba5;
+    }
+
+    .right-sec {
+      height: $content-height;
+      background-color: #8cf5fb;
+    }
+
+    h1 {
+      padding-top: 80px;
+      font-size: $h1-font-size;
+    }
+
+    h2{
+      padding-top: 10px;
+    }
+  }
+}

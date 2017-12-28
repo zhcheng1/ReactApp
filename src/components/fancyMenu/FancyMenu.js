@@ -51,9 +51,7 @@ export default class FancyMenu extends React.Component {
                 <div className="container">
                     <div className="row  justify-content-center">
                         <div className="col-6">
-
                             <h3 className="menuText tada animated">Click the Moon!</h3>
-
                         </div>
                         <div className="col-4">
                             <div className={menuContainerClasses} onClick={this.toggleClass}>

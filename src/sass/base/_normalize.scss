@@ -120,6 +120,8 @@ a {
   &:active, &:hover {
     outline: 0;
   };
+
+  text-decoration-line: none;
 }
 
 /* Text-level semantics
@@ -275,6 +277,7 @@ sub {
   ol,
   ul {
     *margin: 1em 0;
+    padding: 0;
   }
 
   dd {
@@ -579,4 +582,8 @@ th {
 
 h1, h2, h3 {
   margin: 0;
+}
+
+li {
+  list-style: none;
 }

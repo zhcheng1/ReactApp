@@ -1,0 +1,64 @@
+@import "../../sass/base/variables";
+
+$header-min-height: 100px;
+
+@include media-breakpoint(xs) {
+  #header {
+    min-height: $header-min-height;
+    background-color: $app-black;
+    color: $app-white;
+
+    .headerText {
+      padding-top: 30px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      font-size: $h4-font-size;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: flex;
+        flex: 0 0 100%;
+        line-height: $header-min-height * 0.5;
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 4px solid $app-black;
+        padding: 10px;
+
+        &:hover {
+          border-color: yellow;
+          background-color: lightblue;
+        }
+      }
+
+      a{
+        color: $app-white;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .heart {
+    fill: white;
+    position: relative;
+    width: 30px;
+    left: 10px;
+  }
+}
+
+@include media-breakpoint(md) {
+  #header {
+    .links li {
+      padding: 5px;
+      flex: 0 0 25%;
+      line-height: $header-min-height - 4;
+    }
+  }
+}

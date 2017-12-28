@@ -1,0 +1,22 @@
+@import "../../sass/base/variables";
+
+$header-min-height: 100px;
+
+@include media-breakpoint(xs) {
+  #footer {
+    height: 200px;
+    background-color: $app-black;
+    color: $app-white;
+
+    .footerText{
+      padding-top: 30px;
+    }
+
+    .links a {
+      color: $app-white;
+      display: block;
+      padding: 10px;
+      text-transform: uppercase;
+    }
+  }
+}

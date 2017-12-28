@@ -1,9 +1,9 @@
 
-import Header from "../components/nav/header";
-import Footer from "../components/nav/footer";
+import Header from "../components/nav/Header";
+import Footer from "../components/nav/Footer";
 
 
-export default class Frame extends React.Component {
+export default class Template extends React.Component {
     constructor(props) {
         super(props);
     }
