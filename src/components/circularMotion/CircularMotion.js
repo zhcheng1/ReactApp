@@ -13,8 +13,8 @@ export default class CircularMotion extends React.Component {
             return Math.floor(Math.random() * (max - min + 1) + min)
         }
 
-        function randomColor(colors, max) {
-            return colors[max % colors.length];
+        function randomColor(colors, i) {
+            return colors[i % colors.length];
         }
 
         let particles = [];
@@ -23,7 +23,7 @@ export default class CircularMotion extends React.Component {
             let max = 20;
             for (let i = 0; i < max; i++) {
                 const radius = (Math.random() * 2) + 1;
-                particles.push(new Particle(150, 150, radius, randomColor(colors, max)));
+                particles.push(new Particle(150, 150, radius, randomColor(colors, i)));
             }
         }
         function animate() {
