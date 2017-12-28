@@ -1,0 +1,130 @@
+@import "../../sass/base/variables";
+
+@include media-breakpoint(xs) {
+  .fancyMenu {
+    color: $app-white;
+    .menuText {
+
+      text-align: center;
+      font-size: $h5-font-size;
+      height: 300px;
+      padding-top: 150px;
+
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-iteration-count: 2;
+      animation-iteration-count: 2;
+    }
+
+    .menuContainer {
+      height: 100%;
+      background: url("../../img/moon.jpg") no-repeat;
+      background-position: center;
+      background-size: 280%;
+      position: relative;
+
+      &.active #dd1 {
+        transform: translate(-120px,-90px);
+      }
+      &.active #dd2 {
+        transform: translate(-150px, -30px);
+      }
+
+      &.active #dd3 {
+        transform: translate(-120px, 50px);
+      }
+
+      &.active #dd4 {
+        transform: translate(-60px, 100px);
+      }
+    }
+
+    .menuItem {
+      width: 30px;
+      height: 30px;
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/927610/ufo-svgrepo-com.svg) no-repeat;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      color: white;
+      transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+      $menu-items:4;
+      @for $i from 1 through $menu-items{
+        &:nth-child(#{$i}){
+          transition-delay: $i * 0.2s ;
+        }
+      }
+
+      div {
+        border-bottom: 100px solid rgba(pink, 0.6);
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        height: 0;
+        width: 10px;
+        position: absolute;
+        top: 100%;
+        left: -50%;
+      }
+
+      h4{
+        position: absolute;
+        top: 200%;
+        left: -24px;
+        width: 50px;
+        text-align: center;
+        word-wrap: normal;
+        padding-top: 45px;
+      }
+    }
+
+  }
+}
+
+@include media-breakpoint(md) {
+  .fancyMenu {
+    .menuText{
+      font-size: $h3-font-size;
+    }
+
+    .menuItem {
+      width: 50px;
+      height: 50px;
+
+      div {
+        left: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint(lg) {
+  .fancyMenu {
+    .menuText{
+      height: 450px;
+      font-size: $h2-font-size;
+    }
+
+    .menuContainer {
+      &.active #dd1 {
+        transform: translate(-200px,-150px);
+      }
+      &.active #dd2 {
+        transform: translate(-250px, -50px);
+      }
+
+      &.active #dd3 {
+        transform: translate(-200px, 50px);
+      }
+
+      &.active #dd4 {
+        transform: translate(-100px, 150px);
+      }
+    }
+  }
+}
+
+
+

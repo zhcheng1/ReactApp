@@ -11,6 +11,7 @@ import Homepage from "./view/Homepage";
 // <Provider store={store}>
 
 const app = document.getElementById('app');
+var ss= 1;
 ReactDOM.render(
 
         <Router>
