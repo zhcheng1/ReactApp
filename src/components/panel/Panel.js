@@ -30,7 +30,7 @@ export default class Panel extends React.Component {
 
         let panelItems = panelContent.map((el, i) => {
             return (
-                <div className="col-md-6 col-xs-12">
+                <div className="col-md-6 col-xs-12" key={i}>
                     <div className="panelItem" onClick={this.addToCounter(el.title)}>
                         <img className="leftAlign bounce-ball" src={someIMG}/>
                         <div className="leftAlign content">
