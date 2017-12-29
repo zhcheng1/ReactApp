@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build",
-    "dev": "set NODE_ENV=dev&& webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 9003 --history-api-fallback"
+    "dev": "webpack -d  --config ./config/dev.js && webpack-dev-server --content-base dist/ --inline --hot --port 9003 --history-api-fallback"
   },
   "author": "ZQ Cheng",
   "license": "ISC",

@@ -1,5 +1,6 @@
 import style from "./_panel.scss";
 import {Link} from "react-router-dom";
+import someIMG from "../../img/moon.jpg";
 
 export default class Panel extends React.Component {
 
@@ -15,7 +16,7 @@ export default class Panel extends React.Component {
             return (
                 <div className="col-md-6 col-xs-12">
                     <div className="panelItem">
-                        <img className="leftAlign bounce-ball" src={el.imgSrc} />
+                        <img className="leftAlign bounce-ball" src={someIMG} />
                         <div className="leftAlign content">
                             <Link to={el.link}>
                             <h2>{el.title}</h2>
