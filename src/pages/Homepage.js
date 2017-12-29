@@ -1,4 +1,5 @@
 import Banner from '../components/banner/Banner';
+import Panel from '../components/panel/Panel';
 import Template from '../view/Template';
 export default class Homepage extends React.Component {
 
@@ -6,7 +7,7 @@ export default class Homepage extends React.Component {
         return (
             <Template>
                 <Banner/>
-
+                <Panel />
             </Template>
         )
     }

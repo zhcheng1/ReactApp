@@ -1,0 +1,46 @@
+@import "../../sass/base/variables";
+
+$img-width : 40%;
+
+@include media-breakpoint(xs) {
+  .panel {
+    padding-bottom: 30px;
+    position: relative;
+
+    .panelItem {
+      background-color: #f8f9fa;
+      height: 200px;
+      margin-top: 30px;
+      text-align: center;
+      padding: 10px 0;
+
+      img {
+        box-shadow: 1px 0 10px 10px rgba(217,223,230,0.5);
+        width: 40%;
+        border-radius: 50%;
+        top: 3%;
+        height: 100%;
+      }
+
+      &:hover img.bounce-ball, &:focus img.bounce-ball{
+        animation: bounce 600ms cubic-bezier(.63,.09,.75,.46) infinite alternate
+      }
+
+      .content {
+        padding: 20px;
+        width: 60%;
+        height: 100%;
+      }
+
+      .leftAlign {
+        float: left;
+        display: inline-block;
+      }
+
+      a {
+        color: $app-black;
+        height: 100%;
+      }
+    }
+  }
+}

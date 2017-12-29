@@ -8,17 +8,15 @@ export default class Banner extends React.Component {
                         <div className="col-md-6 col-xs-12">
                             <div className="left-sec hover-effect">
                                 <div className="content">
-                                    <h1>Girl</h1>
+                                    <h1>We</h1>
                                     <h2>Develop</h2>
                                 </div>
-
                             </div>
-
                         </div>
                         <div className="col-md-6 col-xs-12">
                             <div className="right-sec hover-effect">
                                 <div className="content">
-                                    <h1>Boy</h1>
+                                    <h1>We</h1>
                                     <h2>Build</h2>
                                 </div>
 
