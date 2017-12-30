@@ -9,13 +9,11 @@ export default class Panel extends React.Component {
     }
 
     add() {
-        debugger;
-        let addToCounter = this.props.actions.addCounter;
+        let addToCounter = this.props.addCounter;
         addToCounter();
     };
 
     render() {
-        debugger;
         let {count} = this.props;
 
         let panelContent = [
@@ -28,7 +26,7 @@ export default class Panel extends React.Component {
         let panelItems = panelContent.map((el, i) => {
             return (
                 <div className="col-md-6 col-xs-12" key={i}>
-                    <div className="panelItem" onMouseOver={this.add}>
+                    <div className="panelItem">
 {/*
                         <img className="leftAlign bounce-ball" src={el.imgSrc}/>
 */}
@@ -50,7 +48,9 @@ export default class Panel extends React.Component {
                         { panelItems }
                     </div>
                     <div>
-                        <div className="col-xs-12">{count}</div>
+                        <div className="col-xs-12 panelItem" onClick={this.add}>
+                            Click this panel: {count}
+                        </div>
                     </div>
                 </div>
             </div>

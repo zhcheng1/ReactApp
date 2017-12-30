@@ -5,7 +5,6 @@ import './sass/main.scss';
 import Homepage from "./pages/Homepage";
 import ReactApp from "./pages/ReactApp"
 
-
 const app = document.getElementById('app');
 ReactDOM.render(
     <Provider store={store}>
