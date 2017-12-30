@@ -1,26 +1,29 @@
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { addCounter } from '../actions';
+import * as addCounterAction from '../actions';
 import Panel from "../components/panel/Panel";
 
 class PanelContainer extends React.Component {
     render() {
-        let {count, addCounterAction} = this.props;
+        let {count, actions} = this.props;
         return (
             <div>
-                <Panel count={count} addCounter={addCounterAction} />
+                <Panel count={count} actions={actions} />
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    count: state.count
-});
+function mapStateToProps(state) {
+    debugger;
+    return {
+        count: state.count
+    }
+}
 
 const mapDispatchToProps = dispatch => ({
-    addCounterAction: bindActionCreators(addCounter, dispatch) // () => dispatch(addCounter)
+    actions: bindActionCreators(addCounterAction, dispatch) // () => dispatch(addCounter)
 });
 
 export default PanelContainer = connect(

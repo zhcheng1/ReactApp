@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import {panelReducer} from "./panelReducer";
+import {count} from "./panelReducer";
 
 const rootReducer = combineReducers({
-    panelReducer
+    count
 });
 
 export default rootReducer;

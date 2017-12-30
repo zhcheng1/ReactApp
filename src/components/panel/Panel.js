@@ -9,8 +9,9 @@ export default class Panel extends React.Component {
     }
 
     add() {
-        let {addCounter} = this.props;
-        addCounter();
+        debugger;
+        let addToCounter = this.props.actions.addCounter;
+        addToCounter();
     };
 
     render() {
@@ -19,16 +20,18 @@ export default class Panel extends React.Component {
 
         let panelContent = [
             {imgSrc: {someIMG},title: "About Zhuqing",content: "Click to see her resume inside",link: "/zhuqing"},
-            {imgSrc: "../../img/moon.jpg", title: "About Xiaogou", content: "See his resume inside", link: "/bohan"},
-            {imgSrc: "../../img/moon.jpg", title: "About This Site", content: "See inside", link: "/projects"},
-            {imgSrc: "../../img/moon.jpg", title: "About Cats", content: "See out cats", link: "/cats"}
+            {imgSrc: {someIMG}, title: "About Xiaogou", content: "See his resume inside", link: "/bohan"},
+            {imgSrc: {someIMG}, title: "About This Site", content: "See inside", link: "/projects"},
+            {imgSrc: {someIMG}, title: "About Cats", content: "See out cats", link: "/cats"}
         ];
 
         let panelItems = panelContent.map((el, i) => {
             return (
                 <div className="col-md-6 col-xs-12" key={i}>
-                    <div className="panelItem">
+                    <div className="panelItem" onMouseOver={this.add}>
+{/*
                         <img className="leftAlign bounce-ball" src={el.imgSrc}/>
+*/}
                         <div className="leftAlign content">
                             <Link to={el.link}>
                                 <h2>{el.title}</h2>
@@ -47,7 +50,7 @@ export default class Panel extends React.Component {
                         { panelItems }
                     </div>
                     <div>
-                        <div className="col-xs-12" onClick={this.add}>{count}</div>
+                        <div className="col-xs-12">{count}</div>
                     </div>
                 </div>
             </div>
