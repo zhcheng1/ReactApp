@@ -1,6 +1,8 @@
 import {combineReducers} from "redux";
-import counterReducer from "./counterReducer";
+import {panelReducer} from "./panelReducer";
 
-export default combineReducers({
-    "addAndGet": counterReducer
+const rootReducer = combineReducers({
+    panelReducer
 });
+
+export default rootReducer;

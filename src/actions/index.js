@@ -1,3 +1,4 @@
 import {ADD_COUNTER} from "./actionTypes";
 
-export const addCounter = title => ({type:ADD_COUNTER, title});
+// define actions(type, payload)
+export const addCounter = () => ({type:ADD_COUNTER});

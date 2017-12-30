@@ -1,4 +1,3 @@
 export default {
-    "lastPageClicked": null,
-    "counter": 0
+    "count": 0
 }

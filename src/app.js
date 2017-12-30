@@ -1,24 +1,20 @@
 import { BrowserRouter as Router, Route} from "react-router-dom";
-import './sass/main.scss';
-
-//import routes from "./routes.js"
-
+import store from "./store/store";
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import './sass/main.scss';
 import Homepage from "./pages/Homepage";
 import ReactApp from "./pages/ReactApp"
 
-//let store = createStore(todoApp);
-// <Provider store={store}>
 
 const app = document.getElementById('app');
 ReactDOM.render(
-
+    <Provider store={store}>
         <Router>
             <div>
-            <Route exact path="/" component={Homepage}></Route>
-            <Route path="/reactapp" component={ReactApp}></Route>
+                <Route exact path="/" component={Homepage}></Route>
+
             </div>
-        </Router>,
+        </Router>
+    </Provider>,
 app);
 
