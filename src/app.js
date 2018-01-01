@@ -11,6 +11,7 @@ ReactDOM.render(
         <Router>
             <div>
                 <Route exact path="/" component={Homepage}></Route>
+                <Route path="/react" component={ReactApp}></Route>
 
             </div>
         </Router>
