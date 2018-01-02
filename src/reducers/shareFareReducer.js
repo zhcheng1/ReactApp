@@ -25,21 +25,49 @@ class Item {
 }
 
 const fakeData = {
-    totalSpend: 17,
-    average: 17,
     people: {
-        'person0': new Person("person0", "A", [])
+        'person0': new Person("person0", "A", ["item0"]),
+        'person1': new Person("person1", "B", ["item1"]),
+        'person2': new Person("person2", "C", ["item2"]),
+        'person3': new Person("person3", "D", ["item3"]),
     },
-    peopleCount: 0,
-    items: {},
-    itemsCount: 0
+    peopleCount: 4,
+    items: {
+        "item0": {
+        id: "item0",
+        item: "water",
+        quantity: 1,
+        unitPrice: 10
+    },
+        "item1": {
+            id: "item1",
+            item: "water",
+            quantity: 2,
+            unitPrice: 50
+        },
+        "item2": {
+            id: "item2",
+            item: "water",
+            quantity: 1,
+            unitPrice: 30
+        },
+        "item3": {
+            id: "item3",
+            item: "water",
+            quantity: 2,
+            unitPrice: 5
+        },
+    },
+    itemsCount: 4,
+    result: {}
 
 };
 
 function peopleFareReducer (state, actions, currCount) {
+    let personID = "";
     switch (actions.type){
         case ADD_PERSON:
-            let personID = "person" + currCount;
+            personID = "person" + currCount;
             return {
                 ...state,
                 [personID] : new Person(personID, actions.name, []),
@@ -51,6 +79,20 @@ function peopleFareReducer (state, actions, currCount) {
             return {
                 ...state,
                 [actions.personID] : new Person(person.id, person.name,person.items),
+            };
+        case REMOVE_FARE_ITEM:
+            // state: people
+            // actions:itemID, personID
+            personID = actions.personID;
+            function removeItem(array, filterCondition) {
+                return array.filter( (item, index) => item !== filterCondition);
+            }
+            return {
+                ...state,
+                [personID] : {
+                    ...state[personID],
+                    items: removeItem(state[personID].items, actions.itemID)
+                }
             };
         default:
             return state;
@@ -76,10 +118,15 @@ function itemsReducer (state, actions, currCount) {
                 [currItem.id]: currItem
             };
         case REMOVE_FARE_ITEM:
-            action = actions.item;
-            const newState = state;
-            //delete newState[action.id];
-            return Object.assign({}, state, newState);
+            // state: all data
+            // actions:itemID, personID
+            return  Object.keys(state).reduce((result = {}, key) => {
+                        if (key != actions.itemID) {
+                            result[key] = state[key];
+                        }
+                        return result;
+                    }, {});
+
         default:
             return state;
     }
@@ -108,8 +155,10 @@ export const shareFareReducer = (state = fakeData, actions)=>{
                 items: itemsReducer(state.items, actions)
             });
         case REMOVE_FARE_ITEM:
+            // newItem, personID
             return Object.assign({}, state, {
-                items: itemsReducer(state.items, actions)
+                items: itemsReducer(state.items, actions),
+                people: peopleFareReducer(state.people, actions)
             });
         default:
             return state;

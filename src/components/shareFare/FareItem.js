@@ -21,7 +21,8 @@ export default class FareItem extends React.Component {
     }
 
     removeItem() {
-        this.props.removeFareItem(this.props.item);
+        let {el, personID} = this.props;
+        this.props.removeFareItem(el.id, personID);
     }
 
     render() {
@@ -34,18 +35,21 @@ export default class FareItem extends React.Component {
             )
         } else {
             element = (
-                <div>
-                    <div>{el.item}</div>
-                    <div>{el.unitPrice}</div>
-                    <div>{el.quantity}</div>
-                    <button onClick={this.showInput}>Edit</button>
-                    <button onClick={this.removeItem}>Remove</button>
+                <div className="row">
+                    <div className="col-md-3">{el.item}</div>
+                    <div className="col-md-3">{el.unitPrice}</div>
+                    <div className="col-md-3">{el.quantity}</div>
+                    <div className="col-md-3">
+                        <button className="btn btn-outline-primary" onClick={this.showInput}>Edit</button>
+                        <button className="btn btn-outline-primary" onClick={this.removeItem}>Remove</button>
+                    </div>
+
                 </div>
             )
         }
 
         return (
-            <div className="col-xs-3 col-md-2">
+            <div className="fare-item">
                 {element}
             </div>
         )

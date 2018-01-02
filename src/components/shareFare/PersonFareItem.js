@@ -10,11 +10,20 @@ export default class PersonFareItem extends React.Component {
             let uniqueKey = `personFareItem${i}`;
 
             return (
-                <FareItem el={el} key={uniqueKey} editItem={editItem} removeFareItem={removeFareItem} personID={personID} />
+                <div className="person-fare-item-list" key={uniqueKey}>
+                    <FareItem el={el}
+                              editItem={editItem} removeFareItem={removeFareItem}
+                              personID={personID} />
+                </div>
             )
         });
         return (
-            <div className="row">
+            <div className="person-fare-item container" key={personID}>
+                <div className="row">
+                    <div className="col-md-3">Item</div>
+                    <div className="col-md-3">Quantity</div>
+                    <div className="col-md-3">UnitPrice</div>
+                </div>
             {itemList}
             </div>
         )

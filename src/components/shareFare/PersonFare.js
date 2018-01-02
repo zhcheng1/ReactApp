@@ -17,7 +17,7 @@ export default class PersonFare extends React.Component {
 
     toggleClass() {
         this.setState({
-            show: true
+            show: !this.state.show
         })
     }
 
@@ -55,35 +55,56 @@ export default class PersonFare extends React.Component {
                     itemList.push(items[item]);
                 })
             }
-            debugger
+
             return (
-                <div className="row" key={el.name}>
-                    <div className="col-xs-12">
-                        {el.name} {el.id} Total Paid: **
+                <div className="people-list" key={el.id}>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12 col-xs-12">
+                                <h3 className="person-title">{el.name}</h3>
+                            </div>
+                        </div>
                     </div>
                     <PersonFareItem items={itemList} editItem={editItem} removeFareItem={removeFareItem}
                                     personID={el.id}/>
-                    <PersonFareInput addItem={this.addItem} personID={el.id}/>
+                    <div className="container">
+
+                        <PersonFareInput addItem={this.addItem} personID={el.id}/>
+
+                    </div>
                 </div>
             )
 
         });
 
         return (
-            <div className="container">
+            <div className="person-fare">
+
                 {peopleList}
-                <div className="row">
-                    <div className="col-xs-12">
-                        <button onClick={this.toggleClass}>Add One Person</button>
-                        <button>Calculate</button>
-                    </div>
-                    <div className="col-xs-12">
-                        <div className={this.state.show ? '' : 'hide'}>
-                            <input type="text" placeholder="Name Here"
-                                   value={this.state.name}
-                                   onChange={this.handleChange}
-                                   onKeyDown={this.addPerson} />
-                            <button onClick={this.addPersonClick}>OK</button>
+
+                <div className="middle-section">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <button className="btn btn-outline-primary" onClick={this.toggleClass}>Add One Person</button>
+                                <button className="btn btn-outline-primary" onClick={()=>this.props.showResult()}>Calculate</button>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-3">
+                                <div className={this.state.show ? 'add-person-input' : 'hide'}>
+                                    <input className="form-control"
+                                           type="text" placeholder="Name Here"
+                                           value={this.state.name}
+                                           onChange={this.handleChange}
+                                           onKeyDown={this.addPerson} />
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className={this.state.show ? 'add-person-input' : 'hide'}>
+                                <span className="btn btn-outline-success" onClick={this.addPersonClick}>OK</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -52,24 +52,36 @@ export default class PersonFareInput extends React.Component {
     render() {
         let {editing} = this.props;
         return (
-            <div>
-                <input type="text" placeholder="Add Item"
-                    value={this.state.item}
-                    name="item"
-                    onChange={this.handleChange}
-                />
-                <input type="number" placeholder="Add Quantity"
-                    value={this.state.quantity}
-                       onChange={this.handleChange}
-                       name="quantity"
+
+            <div className="person-fare-input row">
+                <div className="col-md-3">
+                    <input className="form-control"
+                        type="text" placeholder="Add Item"
+                        value={this.state.item}
+                        name="item"
+                        onChange={this.handleChange}
                     />
-                <input type="text" placeholder="Add Price"
-                    value={this.state.unitPrice}
-                       name="unitPrice"
-                       onChange={this.handleChange}
+                </div>
+                <div className="col-md-3">
+                    <input className="form-control"
+                           type="number" placeholder="Add Quantity"
+                           value={this.state.quantity}
+                           onChange={this.handleChange}
+                           name="quantity"
                     />
-                <button className={editing ? 'hide' :''} onClick={this.addItem}>Add</button>
-                <button className={editing ? '' :'hide'} onClick={this.editItem}>OK</button>
+                </div>
+                <div className="col-md-3">
+                    <input className="form-control"
+                           type="currency" placeholder="Add Price"
+                           value={this.state.unitPrice}
+                           name="unitPrice"
+                           onChange={this.handleChange}
+                    />
+                </div>
+                <div className="col-md-3">
+                    <button className={editing ? 'hide' :'btn btn-outline-primary'} onClick={this.addItem}>Add</button>
+                    <button className={editing ? 'btn btn-outline-primary' :'hide'} onClick={this.editItem}>OK</button>
+                </div>
             </div>
         )
     }

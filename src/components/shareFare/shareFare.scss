@@ -1,0 +1,56 @@
+@import "../../sass/base/variables";
+
+$row-spacing: 0.375rem;
+
+@include media-breakpoint(xs) {
+  .shareFare {
+
+    h1 {
+      text-align: center;
+      padding: $row-spacing;
+    }
+    .people-list {
+      margin-bottom: $row-spacing * 3;
+    }
+
+    .middle-section {
+      .row {
+        padding: $row-spacing + 0.5;
+      }
+
+      button {
+        margin-right: $row-spacing;
+      }
+    }
+    .person-title {
+      text-align: center;
+      padding: $row-spacing 0;
+      border-bottom: 2px solid grey;
+      background-color: $app-background-grey;
+    }
+
+
+    .person-fare-item {
+      .person-fare-item-list:nth-child(2n + 1) {
+        background-color: $app-background-light-blue;
+      }
+
+      .person-fare-item-list .person-fare-input {
+        padding: 0;
+      }
+
+      .person-fare-item-list{
+        border-bottom : 1px solid $app-background-light-blue;
+      }
+
+      button {
+        margin-right: $row-spacing;
+      }
+    }
+
+    .person-fare-item-list, .person-fare-input {
+      padding: $row-spacing;
+    }
+
+  }
+}

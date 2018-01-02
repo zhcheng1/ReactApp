@@ -47,11 +47,6 @@ export default class Panel extends React.Component {
                     <div className="row">
                         { panelItems }
                     </div>
-                    <div>
-                        <div className="col-xs-12 panelItem" onClick={this.add}>
-                            Click this panel: {count}
-                        </div>
-                    </div>
                 </div>
             </div>
         )

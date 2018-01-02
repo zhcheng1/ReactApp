@@ -6,7 +6,7 @@ export default class Footer extends React.Component {
         let menuData = ["home", "Zhuqing", "Xiaogou"];
         let headerItem = menuData.map((el, i) => {
             return (
-                <li key={i}><Link to='${{el}}'>{el}</Link></li>
+                <li key={i}><Link to={el}>{el}</Link></li>
             )
         });
         return (
