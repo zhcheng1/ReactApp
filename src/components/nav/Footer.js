@@ -3,7 +3,7 @@ import sytle from "./_footer.scss";
 
 export default class Footer extends React.Component {
     render() {
-        let menuData = ["home", "Zhuqing", "Xiaogou"];
+        let menuData = ["home", "zhuqing", "bohan"];
         let headerItem = menuData.map((el, i) => {
             return (
                 <li key={i}><Link to={el}>{el}</Link></li>
@@ -22,8 +22,11 @@ export default class Footer extends React.Component {
                             </ul>
                         </div>
                         <div className="col-md-4 col-xs-12">
-                            <h1 className="footerText">PlaceHolder</h1>
+                            <h1 className="footerText">Contact us:</h1>
+                                <h1 className="footerText">sarazqcheng@gmail.com</h1>
+                                <h1 className="footerText">patrick.dk.chen@gmail.com</h1>
                         </div>
+
                     </div>
                 </div>
             </footer>

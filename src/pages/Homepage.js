@@ -7,7 +7,7 @@ export default class Homepage extends React.Component {
         return (
             <Template>
                 <Banner/>
-                <PanelContainer />
+                <PanelContainer route="homepage" />
             </Template>
         )
     }

@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import sytle from "./_header.scss";
 export default class Header extends React.Component {
     render() {
 
-        let menuData = ["home", "Zhuqing", "Xiaogou"];
+        let menuData = ["home", "zhuqing", "bohan", "projects"];
         let headerItem = menuData.map((el, i) => {
             return (
                 <li key={i} className="active"><Link to={el}>{el}</Link></li>
