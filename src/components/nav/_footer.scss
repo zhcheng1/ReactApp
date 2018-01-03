@@ -4,7 +4,7 @@ $header-min-height: 100px;
 
 @include media-breakpoint(xs) {
   #footer {
-    height: 200px;
+    min-height: 200px;
     background-color: $app-black;
     color: $app-white;
 

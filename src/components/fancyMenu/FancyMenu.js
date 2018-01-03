@@ -33,7 +33,7 @@ export default class FancyMenu extends React.Component {
         let menuItems = [{'text': 'home', 'link': '/'},
                         {'text': 'zhuqing', 'link': '/zhuqing'},
                         {'text': 'bohan', 'link': '/bohan'},
-                        {'text': 'projects', 'link': '/projects'}];
+                        {'text': 'cats', 'link': '/cats'}];
         menuItems = menuItems.map((item, key) => {
             return (
                 <FancyMenuItem prefix="dd" index={key} item={item.text} link={item.link} key={key}/>
@@ -49,7 +49,7 @@ export default class FancyMenu extends React.Component {
             <div className="fancyMenu star">
                 <div className="twinkling">
                 <div className="container">
-                    <div className="row  justify-content-center">
+                    <div className="fancy-menu-text row  justify-content-center">
                         <div className="col-6">
                             <h3 className="">Under Construction</h3>
                             <h3 className="menuText tada animated">Click the Moon!</h3>
@@ -60,8 +60,8 @@ export default class FancyMenu extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row justify-content-center">
-                        <div className="col-6">
+                    <div className="circular-motion row">
+                        <div className="col-3">
                             <CircularMotion />
                         </div>
                     </div>

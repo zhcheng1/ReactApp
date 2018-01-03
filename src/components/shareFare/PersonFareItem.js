@@ -19,7 +19,7 @@ export default class PersonFareItem extends React.Component {
         });
         return (
             <div className="person-fare-item container" key={personID}>
-                <div className="row">
+                <div className="row person-fare-item-row">
                     <div className="col-md-3">Item</div>
                     <div className="col-md-3">Quantity</div>
                     <div className="col-md-3">UnitPrice</div>

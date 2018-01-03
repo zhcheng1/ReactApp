@@ -1,4 +1,4 @@
-
+import { Link} from "react-router-dom";
 export default class FancyMenuItem extends  React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ export default class FancyMenuItem extends  React.Component {
         return (
             <div id={id} className="menuItem" onClick={this.showMenuLink}>
                 <div className={this.state.show ? '' : 'hide'}>
-                    <h4>{item} {link}</h4>
+                    <h4><Link to={link}>{item}</Link></h4>
                 </div>
             </div>
         )
