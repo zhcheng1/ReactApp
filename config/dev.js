@@ -2,10 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {dfPath, dfConfig } = require('./default.js');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 let config = Object.assign(dfConfig, {
 
     plugins: [
+        new ExtractTextPlugin("[name]-bundle.css"),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             filename: '../index.html',
@@ -15,6 +18,28 @@ let config = Object.assign(dfConfig, {
             React: 'react',
             ReactDOM: 'react-dom',
             PT: 'prop-types'
+        }),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                /**
+                 * Sass
+                 * Reference: https://github.com/jtangelder/sass-loader
+                 * Transforms .scss files to .css
+                 */
+                sassLoader: {
+                    //includePaths: [path.resolve(__dirname, "node_modules/foundation-sites/scss")]
+                },
+                /**
+                 * PostCSS
+                 * Reference: https://github.com/postcss/autoprefixer-core
+                 * Add vendor prefixes to your css
+                 */
+                postcss: [
+                    autoprefixer({
+                        browsers: ['last 2 version']
+                    })
+                ]
+            }
         })
     ],
 
@@ -56,19 +81,10 @@ config.module.rules.push(
     },
     {
         test: /\.scss$/,
-        use: [
-            'style-loader',
-            {
-                loader: 'css-loader',
-                // options: {
-                //     module: true,
-                //     localIdentName: '[local]--[hash:base64:6]'
-                // }
-            },
-            {
-                loader: 'sass-loader'
-            }
-        ]
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'postcss-loader', 'sass-loader']
+        })
     }
 );
 
