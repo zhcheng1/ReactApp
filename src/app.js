@@ -6,6 +6,7 @@ import Homepage from "./pages/Homepage";
 import ReactApp from "./pages/ReactApp";
 import Cats from "./pages/Cats";
 import Construction from "./pages/Construction";
+import Hiretual from "./pages/Hiretual"
 
 const app = document.getElementById('app');
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
                 <Route path="/zhuqing" component={Construction}></Route>
                 <Route path="/bohan" component={Construction}></Route>
                 <Route path="/cats" component={Cats}></Route>
+                <Route path="/hiretual" component={Hiretual}></Route>
 
             </div>
         </Router>
